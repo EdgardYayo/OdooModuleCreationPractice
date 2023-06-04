@@ -16,6 +16,8 @@
                         <field name="is_child"/>
                         <field name="age"/>
                         <field name="gender"/>
+                        <!-- Con el atributo 'options' en field podemos definir si queremos que nuestro campo many2one puede ser creado o revisado desde el model de patient -->
+                        <field name="doctor_id" options="{'no_open':True, 'no_create':True }"/>
                         <field name="capitalized_name"/>
                     </group>
                 </sheet>
@@ -41,7 +43,7 @@
         </field>
     </record>
 
-    
+
     <record id="view_hospital_patient_search" model="ir.ui.view">
         <field name="name">hospital.patient.search</field>
         <field name="model">hospital.patient</field>
@@ -75,5 +77,5 @@
               name="Patients"
               action="action_hospital_patient"
               parent="menu_hospital_operations"
-              sequence="10"/> 
+              sequence="10"/>
 </odoo>

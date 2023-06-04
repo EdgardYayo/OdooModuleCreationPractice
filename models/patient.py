@@ -13,6 +13,7 @@ class HospitalPatient(models.Model):
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')], string="Gender", tracking=True)
     capitalized_name = fields.Char(string="Capitalized Name", compute="_compute_capitalized_name", store=True)
     ref = fields.Char(string="Reference", default=lambda self: _("New"))
+    doctor_id = fields.Many2one('hospital.doctor', string="Doctor")
 
     @api.model_create_multi
     def create(self, vals_list):

@@ -12,3 +12,12 @@ class HospitalDoctor(models.Model):
     gender = fields.Selection([('male','Male'), ('female', 'Female'), ('others', 'Others')], string="Gender", tracking=True)
 
     ref = fields.Char(string="Reference", required=True)
+    active = fields.Boolean(default=True)
+
+
+    def name_get(self):
+        res = []
+        for rec in self:
+            name = f'{rec.ref} - {rec.name}'
+            res.append((rec.id, name))
+        return res

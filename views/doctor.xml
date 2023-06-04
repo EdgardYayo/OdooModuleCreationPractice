@@ -6,10 +6,12 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
                     <group>
                         <field name="name"/>
                         <field name="gender"/>
                         <field name="ref"/>
+                        <field name="active" invisible="1"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -31,6 +33,21 @@
             </tree>
         </field>
     </record>
+
+    <record id="view_hospital_doctor_search" model="ir.ui.view">
+        <field name="name">hospital.doctor.search</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="ref"/>
+                <field name="gender"/>
+                <separator/>
+                <field name="archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
 
      <record id="action_hospital_doctor" model="ir.actions.act_window">
         <field name="name">Doctors</field>

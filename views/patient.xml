@@ -15,11 +15,30 @@
                         <field name="name"/>
                         <field name="is_child"/>
                         <field name="age"/>
+                        <field name="responsable_id"/>
                         <field name="gender"/>
                         <!-- Con el atributo 'options' en field podemos definir si queremos que nuestro campo many2one puede ser creado o revisado desde el model de patient -->
                         <field name="doctor_id" options="{'no_open':True, 'no_create':True }"/>
                         <field name="capitalized_name"/>
                     </group>
+                    <notebook>
+                        <page string="Pharmacy" name="pharmacy">
+                            <field name="pharmacy_line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="price_unit"/>
+                                    <field name="qty"/>
+                                </tree> 
+                                <form>
+                                    <group>
+                                         <field name="product_id"/>
+                                         <field name="price_unit"/>
+                                         <field name="qty"/>
+                                    </group> 
+                                </form> 
+                            <field>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
@@ -37,6 +56,7 @@
                 <field name="ref"/>
                 <field name="name"/>
                 <field name="age"/>
+                <field name="responsable_id"/>
                 <field name="gender"/>
                 <field name="capitalized_name"/>
             </tree>

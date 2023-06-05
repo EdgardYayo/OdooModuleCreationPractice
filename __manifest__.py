@@ -3,7 +3,7 @@
     "author":"El autor del modulo",
     "website":"el website del modulo o del autor",
     "summary":"el resumen del modulo",
-    "depends":["mail"],
+    "depends":["mail", "product"],
     "data":[
         'security/ir.model.access.csv',
         'data/sequence.xml',

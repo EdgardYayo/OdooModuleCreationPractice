@@ -13,7 +13,10 @@ class HospitalPatient(models.Model):
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')], string="Gender", tracking=True)
     capitalized_name = fields.Char(string="Capitalized Name", compute="_compute_capitalized_name", store=True)
     ref = fields.Char(string="Reference", default=lambda self: _("New"))
+
+    responsable_id = fields.Many2one('res.partner', string="Responsible")
     doctor_id = fields.Many2one('hospital.doctor', string="Doctor")
+    pharmacy_line_ids = fields.One2many('appointment.pharmacy.lines', 'patient_id', string="Pharmacy Lines")
 
     @api.model_create_multi
     def create(self, vals_list):

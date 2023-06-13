@@ -11,6 +11,7 @@ class HospitalPatient(models.Model):
     is_child = fields.Boolean(string="Is Child ?", tracking=True)
     notes = fields.Text(string="Notes")
     gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('others', 'Others')], string="Gender", tracking=True)
+    state = fields.Selection([('draft','Draft'),('confirm','Confirm'),('done', 'Done'), ('cancel', 'Cancel')], default="draft", string="Status")
     capitalized_name = fields.Char(string="Capitalized Name", compute="_compute_capitalized_name", store=True)
     ref = fields.Char(string="Reference", default=lambda self: _("New"))
 

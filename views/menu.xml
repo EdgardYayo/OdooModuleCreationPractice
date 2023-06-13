@@ -1,7 +1,11 @@
 <?xml version="1.0" enconding="utf-8"?>
 <odoo>
+
+    <!-- El atributo web_icon añade una imagen al modulo custom "om_hospital"-->
+    <!-- Esta debe estar ubicada en la ruta  ../static/description/hospital_icon.png -->
     <menuitem id="menu_hospital_root"
               name="Hospital"
+              web_icon="om_hospital, static/description/hospital_icon.png" 
               sequence="10"/> 
 
     <menuitem id="menu_hospital_operations"

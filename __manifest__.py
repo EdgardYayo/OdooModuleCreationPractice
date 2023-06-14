@@ -11,5 +11,8 @@
         'views/menu.xml',
         'views/patient.xml',
         'views/doctor.xml',
+        'views/female_patient_view.xml',
+        'views/male_patient_view.xml',
+        'views/child_patient_view.xml',
     ]
 }

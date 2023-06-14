@@ -96,7 +96,7 @@
         <field name="context">{}</field>
         <field name="search_view_id" ref="om_hospital.view_hospital_patient_search"/>
 
-        <!-- Este campo solo se mostrara como ayuda cuando no exista ningun dato en la vista  -->
+        <!-- Este campo solo se mostrara como ayuda cuando no exista ningun record en la vista  -->
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first patient !!!

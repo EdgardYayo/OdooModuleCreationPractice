@@ -1,0 +1,24 @@
+<?xml version="1.0" enconding="utf-8"?>
+<odoo>
+ 
+    <record id="action_hospital_child_patient" model="ir.actions.act_window">
+        <field name="name">Child Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_model">tree, form</field>
+        <field name="context">{'default_is_child':True}</field>
+        <field name="domain">['|',('is_child', '=', 'true'), ('age', '&lt;=', '10')]</field>
+        <!-- Este campo solo se mostrara como ayuda cuando no exista ningun dato en la vista  -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first child patient !!!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_child_patient"
+              name="Child Patients"
+              action="action_hospital_child_patient"
+              parent="menu_hospital_operations"
+              sequence="40"/>
+</odoo>
